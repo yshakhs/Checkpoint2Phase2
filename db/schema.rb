@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_24_192705) do
 
   create_table "organizations", force: :cascade do |t|
+    t.string "name"
     t.string "street_1"
     t.string "street_2"
     t.string "city"
