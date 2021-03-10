@@ -49,12 +49,20 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'factory_bot_rails'
 end
 
 group :test do
   # Adding some minitest gems to extend minitest
+  gem 'shoulda', '3.5.0'
+  gem 'shoulda-matchers', '2.8.0'
   gem 'minitest-rails', '3.0.0'
   gem 'minitest-reporters', '1.1.19'
+
+  gem 'rails-controller-testing'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'launchy'
   # Adding simplecov for test coverage reporting
   gem 'simplecov'
   # Adds support for Capybara system testing and selenium driver
@@ -62,6 +70,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
