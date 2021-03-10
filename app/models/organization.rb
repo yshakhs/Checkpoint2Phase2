@@ -4,15 +4,15 @@ class Organization < ApplicationRecord
     has_many :student_teams, through: :students
     has_many :student_teams, through: :teams
 
+    validates_presence_of :name
+    validates_presence_of :street_1
+    validates_presence_of :zip
+    validates_presence_of :short_name
 
     scope :active, -> { where(active: true) }
     scope :inactive, -> { where(active: false) }
     scope :alphabetical, -> { order('name') }
 
-    validates_presence_of :name
-    validates_presence_of :street_1
-    validates_presence_of :zip
-    validates_presence_of :short_name
 
     validates_format_of :zip, with: /\A\d{5}\z/, message: "should be five digits long", allow_blank: true
     validates_uniqueness_of :short_name, message:"short_name already in the records"
