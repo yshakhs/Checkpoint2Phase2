@@ -12,6 +12,7 @@ class OrganizationTest < ActiveSupport::TestCase
   should validate_presence_of(:zip)
   should validate_presence_of(:short_name)
   should validate_uniqueness_of(:short_name)
+  should validate_format_of(:zip)
 
   
   #context
